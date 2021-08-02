@@ -7,7 +7,7 @@ FEATURES:<br>
 a) Weather Forecast,<br>
 b) AQI Level Index,<br>
 c) Hourly Weather Forecast,<br>
-d) Locate yourself and know your's area forecasted weather,<br>
+d) Locate yourself and know area forecasted weather,<br>
 e) Background changes as weather changes,<br>
 f) Automatic Locate Weather,<br>
 g) Search Your city and state,<br>
