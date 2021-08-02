@@ -1,0 +1,17 @@
+#contact {
+    padding: 16px;
+    text-align: center;
+    background: #111;
+    color: #fff;
+  }
+  
+  #profile-link {
+    background: #fff;
+    color: #111;
+    margin: 8px;
+  }
+  
+  #credit{
+    font-size: small;
+    color: #999;
+  }

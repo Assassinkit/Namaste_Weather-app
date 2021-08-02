@@ -1,0 +1,206 @@
+/* Input form design */
+#input{
+    margin: 12px;
+}
+
+.btn{
+    width: 50px;
+}
+
+.form-control {
+    padding-left: 12px;
+}
+
+ /* Temperature font design */
+#temp{
+    font-weight: 400;
+    font-size: 80px;
+    padding-top: 75px;
+}
+
+/* current weather design */
+#currentWeatherIcon{
+    width: 250px;
+    height: 220px;
+}
+
+/* Styling to current weather after fixing it to flex display. */
+#currentWeather {
+    transition: transform .2s;
+    color: rgb(2, 2, 2);
+    background-color: #dad4d4;
+    opacity: 0.9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Hover effect introduced to the current weather flex */
+#currentWeather:hover {
+    transform: scale(0.9);
+    background-color:#5275be ;
+}
+
+/* forecast weather card margin set */
+#forecastWeather{
+     margin-top: 20px;
+}
+
+/* Center the row contents */
+.row{
+    justify-content: center;
+}
+
+/* Card design */
+.card{
+    transition: .2s;
+    opacity: 0.8;
+    background-color: #dad4d4;
+    color: rgb(0, 0, 0);
+    width: 200px;
+    height: 250px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hover effect introduced to the card */
+.card:hover {
+    transform: scale(1);
+    background-color:rgb(161, 161, 37)
+}
+
+/* Forecast cards for forecasted icons */
+.card-img-top {
+    width: 100px;
+}
+
+h5{
+    padding-top: 4px;
+}
+
+/* Media queries */
+@media screen and (min-width: 300px) {
+    #currentWeather{
+        margin: 16px;
+    }
+    #temp {
+        padding-top: 0px;
+    }
+  }
+
+  @media screen and (min-width: 375px) {
+    #forecastWeather{
+        padding-left: 12px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    #temp {
+        padding-top: 75px;
+    }
+    #currentWeather{
+        margin: 0px;
+        margin-bottom: 60px;
+    }
+    #forecastWeather{
+        padding-left: 8px;
+    }
+  }
+  
+  @media only screen and (orientation: landscape) {
+    #forecastWeather {
+      padding-left: 58px;
+    }
+    #temp {
+        padding-top: 75px;
+    }
+  }
+  
+  /* For Mapping orientation . */
+  @media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    
+}
+/* For fixing Background Image */
+.bg-image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 170%;
+    z-index: -1;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* For current weather styling */
+.row-parent {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 90%;
+}
+/* Displaying country name anf current day */
+.row-1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+/* Displaying wind icon, wind, and wid description */
+.row-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Displaying weather icon anf temperature */
+.row-2-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Displaying Humidity icon, Humidity, and Descripton% */
+.row-2c {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+/* Displaying Sunrise icon, sunrise and description in hrs. */
+.row-3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Displaying weather description and Feels like temperature */
+.row-3-2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Displaying Sunset icon, sunset and description in hrs. */
+.row-3c {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+

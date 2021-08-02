@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Padauk:wght@700&display=swap');
+
+
+.timeline{
+    display: grid;
+    grid-template-columns: repeat(9, 3rem);
+}
+
+h1{
+    grid-column: 1 / -1;
+}
+.sub1{
+    border-left: thick rgb(255, 8, 0) solid;
+    padding: .7rem;
+}
+agm-map{
+    height: 450px;
+    width: 800px;
+}
+
+.BoxDetails {
+    height: max-content;
+    width: 300px;
+    box-sizing: border-box;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+
+/* Map Styling */
+* {
+    box-sizing: border-box;
+  }
+  
+
+  .box {
+    margin-left: 10px;
+    width: 70%;
+
+    /* padding: 5px; */
+  }
+
+  .clearfix {
+    position: relative !important;
+  }
+  .clearfix::after {
+    clear: both;
+    display: table;
+    position: static;
+  }
+
+.details {
+    display: flex; /*for arranging the elements in the container.*/
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around; /*equal spacing around the objects.*/
+    margin-top: 16px;
+}
+
+.temp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin-top: 24px;
+}
+.temp:hover {
+    transform: scale(1.1);
+    background-color:#d1c844 ;
+}
+.data-main {
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: rgb(61, 73, 177);
+    margin-top: 24px;
+    font-family: 'Montserrat', 'bold', sans-serif sans-serif;
+    box-shadow: -4px -3px 30px 15px rgba(0, 0, 0, 0.35);
+}
+.data-main:hover {
+    transform: scale(0.9);
+    background-color:#faef51 ;
+    color:rgb(0, 0, 0)
+}
+.data-time {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    color:rgb(0, 0, 0);
+    background-color: #ffffff;
+}
+.data-time:hover {
+    transform: scale(1.3);
+    background-color:#a0982f ;
+}
+.text-cen {
+    text-align: center;
+}
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    .box {
+        margin-top: 16px;
+    }
+}
+.svg-icon {
+    height: 30px;
+    width: 30px;
+}

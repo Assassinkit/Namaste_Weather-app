@@ -1,0 +1,170 @@
+<div class="container weather">
+  <div class="bg-image" id="currentBackground" [style]="currentBackground"></div>
+  <!-- Search city -->
+  <div class="row pt-2" id="input">
+    <div class="col-md-6">
+      <div class="input-group">
+        <i-bs name="geoAlt" class="text-dark mr-3" width="2rem" height="2rem" (click)="getCurrentLocation()"></i-bs>
+        <input type="text" class="form-control" name="inputLocation" id="inputLocation"
+          (keypress)="searchWeather($event)" placeholder="Search your City" [(ngModel)]="inputLocation">
+        <div class="input-group-append">
+          <button class="btn btn-primary" (click)="showWeather(inputLocation)" type="submit">
+            <i-bs name="search" class="text-white"></i-bs>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animation -->
+  <div class="row" [ngStyle]="{'margin-bottom':bottomWidth}">
+    <ng-lottie *ngIf="displayWeather" [options]="options"></ng-lottie>
+  </div>
+
+  <div class="row justify-content-center text-center">
+
+    <!-- Current Weather -->
+    <div class="col-lg-6 col-md-12 p-4" id="currentWeather" *ngFor="let item of currentWeather">
+      <!-- <div class="time"> {{ currentTime | date:"HH:mm - EE MMM"}}</div> -->
+      <h1>{{item.name}}, {{item.sys.country}}</h1><br>
+      <h3>{{currentDay}}</h3>
+
+      <div class="row text-center">
+        <img [src]="currentWeatherIcon" id="currentWeatherIcon" alt="image" />
+        <h1 id="temp">{{item.main.temp | round}} °C</h1>
+      </div>
+
+      <div class="row mb-2">
+        <h3>{{item.weather[0].description | titlecase}}</h3>
+      </div>
+
+      <div class="row mb-2">
+        <h5>Feels like {{item.main.feels_like | round }} °C</h5>
+      </div>
+
+      <div class="row mb-2">
+
+        <div class="col">
+          <div class="row">
+            <i-bs name="wind" class="text-white pr-2" width="2rem" height="2rem"></i-bs>
+            <h5>Wind Speed</h5>
+          </div>
+          <div class="row">
+            <h5>{{item.wind.speed * 3.6 | number : '1.2-2'}} km/h</h5>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="row">
+            <i-bs name="droplet" class="text-white pr-2" width="2rem" height="2rem"></i-bs>
+            <h5>Humidity</h5>
+          </div>
+          <div class="row">
+            <h5>{{item.main.humidity}}%</h5>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col">
+          <div class="row">
+            <i-bs name="sunrise" class="text-white pr-2" width="2rem" height="2rem"></i-bs>
+            <h5>Sunrise</h5>
+          </div>
+          <div class="row">
+            <h5> {{sunrise}} Hrs</h5>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="row">
+            <i-bs name="sunset" class="text-white pr-2" width="2rem" height="2rem"></i-bs>
+            <h5>Sunset</h5>
+          </div>
+          <div class="row">
+            <h5> {{sunset}} Hrs</h5>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Forecast Weather -->
+    <div class="col-lg-6 col-md-12">
+
+      <div class="row" id="forecastWeather" *ngFor="let item of forecastWeather; let i=index">
+
+        <div class="col-md-4 col-6 mb-4">
+          <div class="card">
+            <h5 class="card-text pt-2">AQI</h5>
+            <img class="card-img-top" src="assets/images/AQI-O3.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-text">O₃ {{ o3level }}μg/m3</h5>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4 col-6 mb-4">
+          <div class="card">
+            <h5 class="card-text pt-2">Next Hour</h5>
+            <img class="card-img-top" [src]="forecastWeatherIcons[0]" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-text">{{item.hourly[0].temp | round}} °C</h5>
+              <h5 class="card-text">{{item.hourly[0].weather[0].description | titlecase}}</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-6 mb-4">
+          <div class="card">
+            <h5 class="card-text pt-2">After 1 Hr.</h5>
+            <img class="card-img-top" [src]="forecastWeatherIcons[1]" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-text">{{item.hourly[1].temp | round}} °C</h5>
+              <h5 class="card-text">{{item.hourly[1].weather[0].description | titlecase}}</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-6 mb-4">
+          <div class="card">
+            <h5 class="card-text pt-2">After 2 Hrs.</h5>
+            <img class="card-img-top" [src]="forecastWeatherIcons[2]" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-text">{{item.hourly[2].temp | round}} °C</h5>
+              <h5 class="card-text">{{item.hourly[2].weather[0].description | titlecase}}</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-6 mb-4">
+          <div class="card">
+            <h5 class="card-text pt-2">After 3 Hrs.</h5>
+            <img class="card-img-top" [src]="forecastWeatherIcons[3]" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-text">{{item.hourly[3].temp | round}} °C</h5>
+              <h5 class="card-text">{{item.hourly[3].weather[0].description | titlecase}}</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-6 mb-4">
+          <div class="card">
+            <h5 class="card-text pt-2">After 4 Hrs.</h5>
+            <img class="card-img-top" [src]="forecastWeatherIcons[4]" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-text">{{item.daily[4].temp.day | round}} °C</h5>
+              <h5 class="card-text">{{item.daily[4].weather[0].description | titlecase}}</h5>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

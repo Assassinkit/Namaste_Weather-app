@@ -1,0 +1,34 @@
+/* About Page Design */
+.container{
+    color: rgb(2, 2, 2);
+}
+
+.card{
+    width: 275px;
+    box-shadow:greenyellow;
+    box-shadow: 0 4px 8px 0 greenyellow, 0 6px 20px 0 rgba(31, 79, 212, 0.267);
+}
+
+p{
+    font-weight: 600;
+}
+
+/* Footer Setup */
+
+#contact {
+    padding: 16px;
+    text-align: center;
+    background: #111;
+    color: #fff;
+  }
+  
+  #profile-link {
+    background: #fff;
+    color: #111;
+    margin: 8px;
+  }
+  
+  #credit{
+    font-size: small;
+    color: #999;
+  }

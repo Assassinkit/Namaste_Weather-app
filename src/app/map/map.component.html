@@ -1,0 +1,74 @@
+<body>
+  
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="col-cm-12 text-center">
+
+        <div class="input-group mt-5">
+          <input class="form-control" type="text" #userInput (keypress)="searchWeather($event)"
+            placeholder="Search your City">
+          <div class="input-group-append">
+            <button class="input-group-text btn btn-outline-primary" (click)="getCity(userInput.value)">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Current Weather -->
+  <div *ngIf="weather">
+
+    <div class="details">
+      <div class="BoxDetails">
+
+        <div class="data-time">
+          <div class="time text-cen">{{ currentTime | date:"HH:mm - EE MMM"}}</div>
+          <div class="location text-cen">{{ weather.name }}, {{ weather.sys.country }}</div>
+        </div>
+
+        <div class="temp text-cen">
+
+          <span><img src="assets/images/{{weather.weather[0].icon}}@2x.png" alt=""></span> -->
+          <h3>{{ weather.main.temp | number:'1.0-0' }} °C</h3>
+        </div>
+
+        <div class="data-main">
+          <div class="main text-cen">
+            Feels like {{ weather.main.feels_like | number:'1.0-0' }} °C.<br> {{ weather.weather[0].main }}. {{
+            weather.weather[0].description }}
+          </div>
+
+          <div class="sub1">
+            <img src="assets/animation-ready/Humidity.svg" class="svg-icon"> Humidity: {{ weather.main.humidity }}%;
+            <div class="sub2">
+              <img src="assets/images/pressure.png" class="svg-icon" style= "color:black"> Pressure: {{ weather.main.pressure }} hpa;
+              <div class="sub2" >
+                <img src="assets/animation-ready/wind.svg" class="svg-icon"> Wind Speed: {{ weather.wind.speed }} m/s;
+                <div class="sub2">
+                  <img src="assets/images/winddirection.png" class="svg-icon"> Wind Direction: {{ weather.wind.deg }}°;
+                  <div class="sub2">
+                    <img src="assets/images/sea-level.png" class="svg-icon"> Sea Level: {{weather.main.sea_level | number:'1.0-0'}} m;
+                    <div class="sub2">
+                      <img src="assets/images/ground_level.png" class="svg-icon"> Ground Level: {{weather.main.grnd_level | number:'1.0-0'}} m;
+                      <div class="sub2">
+                        <img src="assets/animation-ready/Geo_coords.svg" class="svg-icon"> Geo coords: [{{ weather.coord.lat }}, {{ weather.coord.lon }}]
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix">
+        <div class="box" style="background-color: #bbb">
+          <agm-map [latitude]="lat" [longitude]="lon">
+            <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
+          </agm-map>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
