@@ -2,7 +2,7 @@
 A unique Weather Forecast app with the help of Angular-11/12, Node.js. <br>
 Just open this in VS Code, and do "npm install" for upadating the whole package with new node modules.<br>
 Rate me and Enjoy it with applying your own modification.<br>
-I have used Open Weather APIs for weather deatails, Bootstrap(4 & 5), ngx bootstrap, Bootstrap Icons, Fontawesome, and Lottie Files(https://lottiefiles.com/) for animations.<br>
+I have used Open Weather APIs for weather deatails, Bootstrap(4 & 5), ngx bootstrap(https://www.npmjs.com/package/ngx-bootstrap), Bootstrap Icons, Fontawesome, and Lottie Files(https://lottiefiles.com/) for animations.<br>
 FEATURES:<br>
 a) Weather Forecast,<br>
 b) AQI Level Index,<br>
