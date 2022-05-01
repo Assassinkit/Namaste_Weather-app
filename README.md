@@ -13,3 +13,4 @@ f) Automatic Locate Weather,<br>
 g) Search Your city and state,<br>
 f) Error Alert when you will enter wrong place names.<br>
 If you are unable to clone or facing any sort of problem while applying the animations and need to understand the source code contact me over my email-id: ankitkumar021303@gmail.com.<br> Feel free to have a discussion.
+If you are facing **error TS2314** : Use this code to fix it :- npm i @types/googlemaps@3.39.13 --save-dev
